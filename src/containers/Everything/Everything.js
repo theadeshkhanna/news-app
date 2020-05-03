@@ -28,7 +28,7 @@ class Everything extends Component {
                         ref={input => this.news = input} 
                         placeholder="Enter any keyword" />
                     <br />    
-                    <button>GO</button>    
+                    <button className={classes.Button}>Search</button>    
                 </form> 
                 <div className={classes.Everything}>
                     {
