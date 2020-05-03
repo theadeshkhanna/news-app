@@ -1,0 +1,17 @@
+ul {
+    display: flex;
+    list-style: none;
+}
+
+li {
+    margin: 10px auto;
+}
+
+.Link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: lighter;
+    color: #ccc;
+}
+

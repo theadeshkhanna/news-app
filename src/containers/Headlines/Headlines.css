@@ -1,0 +1,4 @@
+.Headlines {
+    display: flex;
+    flex-wrap: wrap;
+}
