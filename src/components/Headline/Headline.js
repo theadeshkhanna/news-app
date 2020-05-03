@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 import classes from './Headline.css';
 
-class Headline extends Component {
-    render() {
+const Headline = (props) => {
         return (
             <div className={classes.Headline}>
-                <h3>{this.props.item.title}</h3>
-                <img src={this.props.item.urlToImage}/>
+                <h3>{props.item.title}</h3>
+                <img src={props.item.urlToImage} />
                 <br />
                 <br />
-                <a href={this.props.item.url}>READ MORE</a>
+                <a href={props.item.url}>READ MORE</a>
             </div>
         );
-    }
 }
 
 export default Headline;

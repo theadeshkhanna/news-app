@@ -1,8 +1,9 @@
 import React from 'react';
+import classes from './RadioButton.css';
 
 const RadioButton = (props) => {
     return (
-        <div>
+        <div className={classes.RadioButton}>
             <input 
                 type="radio" 
                 name="category"

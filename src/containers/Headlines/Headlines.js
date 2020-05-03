@@ -28,6 +28,7 @@ class Headlines extends Component {
 
         return (
             <div>
+                <h2>Please select a Category to begin with:</h2>
                 <form>
                     {
                         this.props.HeadlinesStore.radioValues.map(radio => {

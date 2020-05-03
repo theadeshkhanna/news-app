@@ -36,7 +36,6 @@ class HeadlinesStore {
     ]
 
     @action getHeadlines = (value) => {
-        if(value) {
             axios.get('top-headlines?country=in&category='+value+'&apiKey=8e817e7f7d6c4de3b20c50e0feb19752')
                 .then(res => {
                     const headlineList = [];
@@ -50,21 +49,6 @@ class HeadlinesStore {
                 }).catch(res => {
                     console.log(res.data);
                 });
-        } else {
-            axios.get('top-headlines?country=in&apiKey=8e817e7f7d6c4de3b20c50e0feb19752')
-                .then(res => {
-                    const headlineList = [];
-
-                    res.data.articles.forEach(element => {
-                        headlineList.push(element);
-                    });
-
-                    this.headlines = headlineList;
-
-                }).catch(res => {
-                    console.log(res.data);
-                });
-        }
     }
 }
 
