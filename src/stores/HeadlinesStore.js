@@ -1,4 +1,4 @@
-import { observable, action, computed } from 'mobx';
+import { observable, action } from 'mobx';
 import axios from '../axios-instance';
 
 class HeadlinesStore {
@@ -38,8 +38,17 @@ class HeadlinesStore {
         }
     ]
 
-    @action getHeadlines = (value) => {
-            axios.get('top-headlines?country=in&category='+value+'&apiKey=8e817e7f7d6c4de3b20c50e0feb19752')
+    @action getHeadlines = (value, pageNumber) => {
+
+        let link = null;
+
+        if (pageNumber) {
+            link = 'top-headlines?country=in&category='+value+'&pageSize=9&page='+pageNumber+'&apiKey=8e817e7f7d6c4de3b20c50e0feb19752'
+        } else {
+            link = 'top-headlines?country=in&category='+value+'&pageSize=9&apiKey=8e817e7f7d6c4de3b20c50e0feb19752';
+        }
+
+            axios.get(link)
                 .then(res => {
                     const headlineList = [];
 

@@ -10,13 +10,25 @@ import Page from '../../components/Page/Page';
 @observer
 class Headlines extends Component {
 
-    componentDidMount(value) {
-        this.props.HeadlinesStore.getHeadlines(value);
+    state = {
+        activeCategory: ''
+    }
+
+    componentDidMount(value, pageValue) {
+        this.props.HeadlinesStore.getHeadlines(value, pageValue);
     }
 
     inputSubmitHandler = (event) => {
         const value = event.target.value;
+        this.setState({
+            activeCategory: value
+        });
         this.componentDidMount(value);
+    }
+
+    pageClickHandler = (pageValue) => {
+        const category = this.state.activeCategory;
+        this.componentDidMount(category, pageValue);
     }
 
     render() {
@@ -54,7 +66,10 @@ class Headlines extends Component {
                 <div>
                     {
                         pageValue.map((val,i) => {
-                            return <Page value={val} key={i}/>
+                            return <Page 
+                                value={val} 
+                                key={i} 
+                                onClick={(event) => this.pageClickHandler(val)} />
                         })
                     }
                 </div>

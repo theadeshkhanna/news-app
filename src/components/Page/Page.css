@@ -1,8 +1,12 @@
 .Page {
     display: inline-block;
-    border: 1px solid black;
+    margin: 10px;
+    font-size: 17px;
 }
 
-li {
+.PageLink {
     list-style: none;
+    text-decoration: none;
+    color: grey;
+    cursor: pointer;
 }
