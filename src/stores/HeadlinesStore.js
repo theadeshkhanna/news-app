@@ -1,9 +1,12 @@
-import { observable, action } from 'mobx';
+import { observable, action, computed } from 'mobx';
 import axios from '../axios-instance';
 
 class HeadlinesStore {
 
     @observable headlines = [];
+    @observable totalResults = 0;
+    @observable totalPages = 0;
+    @observable pageSize = 9;
     @observable radioValues = [
         {
             "value": "health",
@@ -45,10 +48,16 @@ class HeadlinesStore {
                     });
 
                     this.headlines = headlineList;
+                    this.totalResults = res.data.totalResults;
+                    this.calculateTotalPages();
 
                 }).catch(res => {
-                    console.log(res.data);
+                    console.log(res.message);
                 });
+    }
+
+    @action calculateTotalPages = () => {
+        this.totalPages = Math.ceil(this.totalResults / this.pageSize);
     }
 }
 
