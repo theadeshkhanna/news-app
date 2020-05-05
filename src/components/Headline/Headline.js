@@ -5,10 +5,10 @@ const Headline = (props) => {
         return (
             <div className={classes.Headline}>
                 <h3>{props.item.title}</h3>
-                <img src={props.item.urlToImage} />
+                <img src={props.item.urlToImage} alt={props.item.title}/>
                 <br />
                 <br />
-                <a href={props.item.url}>READ MORE</a>
+                <a className={classes.Read} href={props.item.url}>READ MORE</a>
             </div>
         );
 }

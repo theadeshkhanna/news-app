@@ -43,7 +43,7 @@ class Headlines extends Component {
 
         return (
             <div>
-                <h2>Please select a Category to begin with:</h2>
+                <h2 className={classes.Head}>Please select a Category to begin with:</h2>
                 <form>
                     {
                         this.props.HeadlinesStore.radioValues.map((radio,i) => {
@@ -63,7 +63,7 @@ class Headlines extends Component {
                         })
                     }
                 </div>
-                <div>
+                <div className={classes.Footer}>
                     {
                         pageValue.map((val,i) => {
                             return <Page 

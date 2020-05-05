@@ -1,4 +1,13 @@
 .Headlines {
     display: flex;
     flex-wrap: wrap;
+    font-family: inherit;
+}
+
+.Head {
+    color: rgb(41, 41, 41);
+}
+
+.Footer {
+    background-color: rgb(41, 41, 41);
 }

@@ -2,4 +2,9 @@
     display: inline-block;
     margin: 10px;
     padding-left: 10px;
+    color: grey;
+}
+
+.RadioButton:hover {
+    color: rgb(68, 68, 68);
 }

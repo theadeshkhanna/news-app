@@ -9,9 +9,13 @@ li {
 
 .Link {
     text-decoration: none;
-    text-transform: uppercase;
-    font-size: 30px;
-    font-weight: lighter;
-    color: #ccc;
+    font-size: 20px;
+    padding: 10px;
+    color: grey;
+    transition: all .2s;
+}
+
+.Link:hover {
+    color: rgb(68, 68, 68);
 }
 

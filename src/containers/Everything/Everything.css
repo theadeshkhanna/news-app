@@ -21,8 +21,13 @@
     color: grey;
     cursor: pointer;
     border: none;
+    font-family: inherit;
     transition: all .2s;
     font-size: 20px;
+}
+
+.Button:hover {
+    color: rgb(68, 68, 68);
 }
 
 .Button:focus {
